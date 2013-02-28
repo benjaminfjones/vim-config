@@ -25,11 +25,13 @@ Bundle 'gmarik/vundle'
 " External packages
 Bundle 'tpope/vim-markdown'
 Bundle 'IndentAnything'
-Bundle 'OOP-javascript-indentation'
 Bundle 'aaronbieber/quicktask'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'jcf/vim-latex'
+Bundle 'https://github.com/vim-scripts/vimwiki'
+
+" Color scheme
 Bundle 'ciaranm/inkpot'
 
 " Haskell Indenting
@@ -136,3 +138,21 @@ set t_vb=
 
 " Map <Leader>s to sort the visual selection
 vmap <Leader>s :sort<Cr>
+
+" Always expand tabs to spaces
+set expandtab
+
+" turn on cursor crosshairs with <Leader>c
+:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+
+
+"""""""""
+" macros
+"""""""""
+let @q = "{!}fmt" " reformat paragraphs
+let @w = ":%s/\\s+$//" " remove all trailing whitespace
+let @p = ":w !pbcopy"  " copy buffer to mac clipboard
+:nnoremap <Leader>w :%s/\s\+$//<CR>
+:nnoremap <Leader>p :w !pbcopy<CR><CR>
