@@ -26,13 +26,14 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-markdown'
 Bundle 'IndentAnything'
 Bundle 'aaronbieber/quicktask'
-
 Bundle 'tpope/vim-fugitive'
 Bundle 'jcf/vim-latex'
 Bundle 'https://github.com/vim-scripts/vimwiki'
+Bundle 'scrooloose/syntastic'
 
 " Color scheme
-Bundle 'ciaranm/inkpot'
+" Bundle 'ciaranm/inkpot'
+Bundle 'altercation/vim-colors-solarized'
 
 " Haskell Indenting
 Bundle 'elliottt/haskell-indent'
