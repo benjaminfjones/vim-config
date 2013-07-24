@@ -1,19 +1,19 @@
+"""""""""""
+" GLOBALS "
+"""""""""""
+
 set nocompatible
 
 " Set the leader as ';' instead of '\\'
 let mapleader      = ";"
 let maplocalleader = ";"
 
-" OS Detection
-if has('win32') || has('win64')
-let $OS = 'windows'
-let $VIMHOME = $HOME. '/vimfiles'
-else
-let $OS = 'linux'
 let $VIMHOME = $HOME . '/.vim'
-endif
 
-" Setup bundles
+"""""""""""
+" BUNDLES "
+"""""""""""
+
 filetype off
 
 set rtp+=$VIMHOME/bundle/vundle/
@@ -23,35 +23,28 @@ call vundle#rc($VIMHOME . '/bundle')
 Bundle 'gmarik/vundle'
 
 " External packages
-Bundle 'tpope/vim-markdown'
-Bundle 'IndentAnything'
-Bundle 'aaronbieber/quicktask'
 Bundle 'tpope/vim-fugitive'
-Bundle 'jcf/vim-latex'
-Bundle 'https://github.com/vim-scripts/vimwiki'
+Bundle 'vim-scripts/vimwiki'
+Bundle 'samsonw/vim-task'
+Bundle 'https://github.com/vim-scripts/closetag.vim.git'
+
+" Indenting
+Bundle 'IndentAnything'
 Bundle 'scrooloose/syntastic'
-
-" Color scheme
-" Bundle 'ciaranm/inkpot'
-Bundle 'altercation/vim-colors-solarized'
-
-" Haskell Indenting
 Bundle 'elliottt/haskell-indent'
 
 " NERDTree config
 Bundle 'scrooloose/nerdtree'
-if $OS != 'windows'
-    let NERDTreeQuitOnOpen = 1
-endif
 
 " Powerline config
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
-if $OS == 'windows'
-    let g:Powerline_symbols = 'compatible'
-else
-    let g:Powerline_symbols = 'fancy'
-endif
+let g:Powerline_symbols = 'fancy'
+
+
+"""""""""""""""""""""""
+" POST BUNDLE OPTIONS "
+"""""""""""""""""""""""
 
 " Enable filetype detection
 filetype plugin indent on
@@ -64,16 +57,10 @@ set backspace=indent,eol,start
 " Incremental searching
 set incsearch
 
-" Extended matching with %
-runtime macros/matchit.vim
-
-" Set the terminal title
-set title
-
 " Cursor context
 set scrolloff=3
 
-" Allow \ \ to kill the search highlighting.
+" Define double <leader> to kill the search highlighting.
 map <Leader><Leader> :noh<Enter>
 
 " Always show cursor position
@@ -101,18 +88,6 @@ set textwidth=80
 " Highlight trailing space, and tab characters, toggle with <leader>-s
 set list lcs=tab:>-,trail:.
 nmap <leader>s :set nolist!<CR>
-
-
-" Tab navigation
-nmap <C-n> gt
-nmap <C-p> gT
-
-" Disable the help key
-nmap <F1> <Esc>
-imap <F1> <Esc>
-
-" Print options
-set printoptions=paper:letter
 
 " Completion options
 set wildmode=longest:full,list:full
@@ -142,6 +117,8 @@ vmap <Leader>s :sort<Cr>
 
 " Always expand tabs to spaces
 set expandtab
+set tabstop=4
+set shiftwidth=4
 
 " turn on cursor crosshairs with <Leader>c
 :hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
@@ -152,8 +129,10 @@ set expandtab
 """""""""
 " macros
 """""""""
-let @q = "{!}fmt" " reformat paragraphs
-let @w = ":%s/\\s+$//" " remove all trailing whitespace
-let @p = ":w !pbcopy"  " copy buffer to mac clipboard
+
+let @h = "yypVr"
+let @q = "{!}fmt"
+let @w = ":%s/\\s+$//"
+let @p = ":w !pbcopy"
 :nnoremap <Leader>w :%s/\s\+$//<CR>
 :nnoremap <Leader>p :w !pbcopy<CR><CR>
