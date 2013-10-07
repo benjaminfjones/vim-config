@@ -41,6 +41,9 @@ Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
 
+" Colors
+Bundle 'altercation/vim-colors-solarized'
+
 
 """""""""""""""""""""""
 " POST BUNDLE OPTIONS "
@@ -95,7 +98,7 @@ set wildmenu
 set wildignore=*.o,*.hi,*.swp,*.bc
 
 " Colors!
-colors default
+colors solarized
 set bg=dark
 
 " Disable the arrow keys when in edit mode
