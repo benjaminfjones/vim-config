@@ -40,8 +40,6 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 Bundle 'IndentAnything'
 Bundle 'scrooloose/syntastic'
 Bundle 'elliottt/haskell-indent'
-" Aligning
-Bundle 'godlygeek/tabular'
 
 " NERDTree config
 Bundle 'scrooloose/nerdtree'
