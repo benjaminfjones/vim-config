@@ -26,7 +26,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/vimwiki'
 Bundle 'samsonw/vim-task'
-Bundle 'https://github.com/vim-scripts/closetag.vim.git'
+Bundle 'git@github.com:vim-scripts/closetag.vim.git'
 
 " Tabular
 Bundle 'godlygeek/tabular'
@@ -40,6 +40,8 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 Bundle 'IndentAnything'
 Bundle 'scrooloose/syntastic'
 Bundle 'elliottt/haskell-indent'
+" Aligning
+Bundle 'godlygeek/tabular'
 
 " NERDTree config
 Bundle 'scrooloose/nerdtree'
@@ -49,6 +51,21 @@ Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
 " let g:Powerline_symbols = 'fancy'
 
+" Colors
+Bundle 'altercation/vim-colors-solarized'
+
+" Power
+Bundle 'git@github.com:Shougo/unite.vim.git'
+" file search
+nnoremap <leader>f :<C-u>Unite -start-insert file<CR>
+" recursive, fuzzy file search
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>r :<C-u>Unite -start-insert file_rec<CR>
+" most recently used
+nnoremap <leader>m :<C-u>Unite file_mru<CR>
+" yank history
+let g:unite_source_history_yank_enable = 1
+nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
 """""""""""""""""""""""
 " POST BUNDLE OPTIONS "
@@ -103,7 +120,7 @@ set wildmenu
 set wildignore=*.o,*.hi,*.swp,*.bc
 
 " Colors!
-colors default
+colors solarized
 set bg=dark
 
 " Disable the arrow keys when in edit mode
