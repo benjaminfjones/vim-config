@@ -22,5 +22,5 @@ nmap <buffer> <localleader>l O{-# LANGUAGE  #-}<Esc>hhhi
 nmap <buffer> <localleader>i Oimport 
 
 " Set the tab size
-setlocal tabstop=8
+setlocal tabstop=4
 setlocal shiftwidth=2
