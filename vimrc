@@ -59,6 +59,10 @@ nnoremap <leader>m :<C-u>Unite file_mru<CR>
 let g:unite_source_history_yank_enable = 1
 nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
+" LaTeX
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
+
+
 """""""""""""""""""""""
 " POST BUNDLE OPTIONS "
 """""""""""""""""""""""
@@ -99,8 +103,11 @@ if has("spell")
 endif
 
 " Highlight lines longer than 80 chars
-let w:m80=matchadd('ErrorMsg', '\%>80v.\+', -1)
-set textwidth=80
+" let w:m80=matchadd('ErrorMsg', '\%>80v.\+', -1)
+
+" Hint column 78
+set colorcolumn=78
+set textwidth=78
 
 " Highlight trailing space, and tab characters, toggle with <leader>-s
 set list lcs=tab:>-,trail:.
