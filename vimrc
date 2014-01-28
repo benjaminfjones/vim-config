@@ -28,12 +28,18 @@ Bundle 'vim-scripts/vimwiki'
 Bundle 'samsonw/vim-task'
 Bundle 'git@github.com:vim-scripts/closetag.vim.git'
 
+" Tabular
+Bundle 'godlygeek/tabular'
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+
+
 " Indenting
 Bundle 'IndentAnything'
 Bundle 'scrooloose/syntastic'
 Bundle 'elliottt/haskell-indent'
-" Aligning
-Bundle 'godlygeek/tabular'
 
 " NERDTree config
 Bundle 'scrooloose/nerdtree'
@@ -41,7 +47,7 @@ Bundle 'scrooloose/nerdtree'
 " Powerline config
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 
 " Colors
 Bundle 'altercation/vim-colors-solarized'
