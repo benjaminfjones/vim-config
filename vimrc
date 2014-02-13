@@ -44,14 +44,12 @@ Bundle 'elliottt/haskell-indent'
 " Powerline config
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
-" let g:Powerline_symbols = 'fancy'
 
 " Colors
 Bundle 'altercation/vim-colors-solarized'
 
 " LaTeX
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
-
 
 """""""""""""""""""""""
 " POST BUNDLE OPTIONS "
@@ -91,9 +89,6 @@ if has("spell")
     setlocal spell spelllang=en_us
     set nospell
 endif
-
-" Highlight lines longer than 80 chars
-" let w:m80=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
 " Hint column 78
 set colorcolumn=78
